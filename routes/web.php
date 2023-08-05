@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\DataController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -15,4 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+}
+);
+
+Route::get('/customers', [DataController::class, 'showCustomers']);
+Route::get('/products', [DataController::class, 'showProducts']);
+Route::get('/offers', [DataController::class, 'showOffers']);
+Route::get('/sales_reports', [DataController::class, 'showSalesReports']);
+
